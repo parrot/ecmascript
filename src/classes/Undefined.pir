@@ -1,4 +1,4 @@
-## $Id: Undefined.pir 34337 2008-12-24 14:07:26Z bernhard $
+## $Id$
 
 =head1 NAME
 

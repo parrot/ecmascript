@@ -1,4 +1,4 @@
-## $Id: Object.pir 35787 2009-01-20 04:17:21Z chromatic $
+## $Id$
 
 =head1 TITLE
 

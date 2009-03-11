@@ -1,4 +1,4 @@
-## $Id: Boolean.pir 36388 2009-02-05 23:01:54Z NotFound $
+## $Id$
 
 =head1 TITLE
 

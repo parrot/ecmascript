@@ -1,4 +1,4 @@
-## $Id: Array.pir 35477 2009-01-13 05:36:01Z tewk $
+## $Id$
 
 =head1 TITLE
 

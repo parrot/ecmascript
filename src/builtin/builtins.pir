@@ -1,5 +1,5 @@
 # Copyright (C) 2005-2008, Parrot Foundation.
-# $Id: builtins.pir 36833 2009-02-17 20:09:26Z allison $
+# $Id$
 
 .include 'except_severity.pasm'
 
