@@ -344,6 +344,16 @@ Create a new object having the same class as the invocant.
     .return(self)
 .end
 
+.sub 'get_pmc_keyed' :vtable :method
+    .param string key
+    if key == 'length' goto len
+    say ' - Uhhh'
+    .return()
+len:
+    $I0 = self
+    .return($I0)
+.end
+
 # Local Variables:
 #   mode: pir
 #   fill-column: 100
