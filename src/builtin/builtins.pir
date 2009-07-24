@@ -9,13 +9,13 @@
 
 .sub 'print'
     .param pmc args :slurpy
-    .local pmc iter
-    new iter, 'Iterator', args
-    unless iter goto end_print_loop
+    .local pmc it
+    it = iter args
+    unless it goto end_print_loop
   print_loop:
-    $P1 = shift iter
+    $P1 = shift it
     print $P1
-    unless iter goto end_print_loop
+    unless it goto end_print_loop
     print ' '
     goto print_loop
   end_print_loop:

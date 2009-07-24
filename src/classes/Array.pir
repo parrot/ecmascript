@@ -321,15 +321,15 @@ Create a new object having the same class as the invocant.
 
 .sub '' :vtable('get_string') :method
     $S0 = ''
-    .local pmc iter
-    iter = new 'Iterator', self
+    .local pmc it
+    it = iter self
     goto loop_start
     loop:
-    unless iter goto end
+    unless it goto end
     $S0 = concat $S0, ','
     loop_start:
-    $S1 = shift iter
-    $S2 = iter[$S1]
+    $S1 = shift it
+    $S2 = it[$S1]
     concat $S0, $S2
     goto loop
     end:
