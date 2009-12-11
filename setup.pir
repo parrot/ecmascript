@@ -1,6 +1,6 @@
 #!/usr/bin/env parrot
 # Copyright (C) 2009, Parrot Foundation.
-# $Id:  $
+# $Id$
 
 =head1 NAME
 
