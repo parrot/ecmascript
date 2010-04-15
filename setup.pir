@@ -23,8 +23,9 @@ No Configure step, no Makefile generated.
     $S0 = shift args
     load_bytecode 'distutils.pbc'
 
+    .const 'Sub' test = 'test'
+    register_step('test', test)
     .const 'Sub' testclean = 'testclean'
-    register_step_after('test', testclean)
     register_step_after('clean', testclean)
 
     $P0 = new 'Hash'
@@ -66,9 +67,6 @@ SOURCES
     $P5['parrot-js'] = 'js.pbc'
     $P0['installable_pbc'] = $P5
 
-    # test
-    $P0['harness_files'] = ''
-
     # dist
     $P9 = glob('lib/Parrot/Test/*.pm lib/Parrot/Test/JS/*.pm t/*.t t/js_pt/*.t t/sanity_pt/*.t')
     $P0['manifest_includes'] = $P9
@@ -76,11 +74,21 @@ SOURCES
     .tailcall setup(args :flat, $P0 :flat :named)
 .end
 
+.sub 'test' :anon
+    .param pmc kv :slurpy :named
+    .local string cmd
+    cmd = 'perl -I'
+    $S0 = get_tool('lib')
+    cmd .= $S0
+    cmd .= ' t/harness'
+    system(cmd, 1 :named('verbose'))
+.end
+
 .sub 'testclean' :anon
     .param pmc kv :slurpy :named
     .local string cmd
     cmd = 'perl -MExtUtils::Command -e rm_f t/js_pt/*.js t/js_pt/*.out t/sanity_pt/*.js t/sanity_pt/*.out'
-    system(cmd)
+    system(cmd, 1 :named('verbose'))
 .end
 
 # Local Variables:
