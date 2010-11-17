@@ -2,6 +2,7 @@
 # $Id$
 
 .include 'except_severity.pasm'
+.loadlib 'bit_ops'
 
 ## Not sure what standard built-in library is for ECMAScript, but
 ## we need some output function for testing. For now this'll do.
@@ -40,7 +41,7 @@ done:
     .local pmc stdin
     stdin = getstdin
     .local string line
-    line = readline stdin
+    line = stdin.'readline'()
     .return(line)
 .end
 

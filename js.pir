@@ -56,8 +56,6 @@ js is a compiler for ECMAScript-262 (3rd edition) running on Parrot.
 
 .namespace ['JS';'Compiler']
 
-.loadlib 'js_group'
-
 .sub 'onload' :load :init :anon
     load_bytecode 'PCT.pbc'
 
